@@ -1,6 +1,6 @@
 package buildPattern.StructBuildPattern;
 
-public class MilkTea {
+public class MilkTea implements Cloneable {
     public Ice ice;
     public Size size;
     public Sweetness sweetness;
@@ -10,6 +10,17 @@ public class MilkTea {
         this.size=milkTeaBuilder.size;
         this.sweetness=milkTeaBuilder.sweetness;
         this.add=milkTeaBuilder.add;
+    }
+    @Override
+    public MilkTea clone(){
+        MilkTea milkTea=null;
+        try {
+            milkTea=(MilkTea) super.clone();
+        }catch (CloneNotSupportedException e){
+            e.printStackTrace();
+        }finally {
+            return milkTea;
+        }
     }
     public static class MilkTeaBuilder{
         public Ice ice=Ice.MEDIUMICE;
