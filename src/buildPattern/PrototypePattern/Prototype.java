@@ -38,6 +38,7 @@ public class Prototype implements Cloneable, Serializable {
         }
         return  res;
     }
+
     public Prototype absolutlyClone() throws Exception{//序列化实现完全拷贝
         ByteArrayOutputStream bao = new ByteArrayOutputStream();
 
